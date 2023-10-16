@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+/* Style global */
+body {
+  /* font-family: Arial, sans-serif; */
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s ease; /* Préparation pour le changement de couleur */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sections */
+section {
+  padding: 60px;
+  text-align: center;
+  border-bottom: 1px solid #7a7a7a; /* Bord en bas de chaque section */
+  margin-bottom: 20px; /* Marge en bas pour séparer les sections */
+
+  opacity: 0;
+  transform-origin: 50% 100%;
+}
+
+section p {
+  max-width: 1000px;
+  margin: 1em auto;
+}
+
+/* Ajout d'un peu d'espace au-dessus de la première section à cause de la nav fixe */
+#about {
+  padding-top: 100px;
+}
+
+/* Images */
+section img {
+  max-width: 100%;
+  height: auto;
+  /* border: 2px solid #000; */
+  margin-bottom: 20px;
+  /* box-shadow: #0000003b 0px 0px 10px; */
+  filter: drop-shadow(0 0 10px #0000003b);
+
+  border-radius: 15px;
+}
+
+/* Audio et Vidéo */
+audio,
+video {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Navigation */
+nav {
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 3px solid #000000; /* Bord en bas pour séparation */
+}
+
+nav ul {
+  width: fit-content;
+  margin: 1em auto;
+  list-style: none;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Style des boutons */
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* Transition douce */
+}
+
+/* Style quand la souris passe dessus */
+nav ul li a:hover {
+  background-color: #f0f0f0;
+  color: #000000;
+  font-size: 1.1em; /* Changement de taille du texte */
+}
+
+.short-hr {
+  width: 25%;
+  margin: auto; /* Centre la ligne horizontale */
+}
+
+/* Double image (survol) */
+.img-fade {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.img-fade img {
+  transition: opacity 0.5s ease;
+}
+
+.img-fade img:first-child {
+  position: absolute;
+  opacity: 1;
+}
+
+.img-fade:hover img:first-child {
+  opacity: 0;
+}
+
+.img-fade img:last-child {
+  opacity: 0;
+}
+
+.img-fade:hover img:last-child {
+  opacity: 1;
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Conteneur de toutes les compétences */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligne les éléments au début de l'axe principal */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Conteneur de la compétence individuelle */
+.skill {
+  display: flex; /* Flexbox pour le layout */
+  justify-content: flex-start; /* Aligner au début */
+  align-items: center; /* Centrer verticalement */
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+/* Texte décrivant la compétence */
+.skill span {
+  flex-grow: 0; /* Ne prend pas d'espace supplémentaire */
+  flex-shrink: 0; /* Ne rétrécit pas */
+  flex-basis: 30%; /* Largeur initiale */
+  text-align: left;
+  margin-right: 1em; /* Espace entre le texte et la barre */
+  color: wheat;
+  position: absolute;
+  margin-left: 2em;
+}
+
+/* Barre de progression globale */
+.progress {
+  flex-grow: 1; /* Prend tout l'espace restant */
+  height: 30px;
+  background-color: #f1f1f1;
+  border-radius: 50px;
+}
+
+/* Barre de progression remplie */
+.progress-bar {
+  height: 30px;
+  background-color: #333;
+  border-radius: 50px;
+  text-align: right;
+  line-height: 30px;
+  color: white;
+}
+
+/* Section Contact */
+#contact {
+  background-color: #f4f4f4;
+  padding: 2rem;
+}
+
+#contact h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+label, input, textarea {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+.large-textarea {
+  height: 10em;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+
+.fas {
+  margin-right: 0.5rem;
+}
+
+.BoutonSend {
+  background-color: #4CAF50; /* Vert */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.BoutonSend:hover {
+  background-color: #45a049; /* Vert foncé au survol */
+}
+
+
+/*Surlignage dans le menu de navigation*/
+.active {
+  background-color: black;
+  color: white;
+}
+
